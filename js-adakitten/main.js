@@ -14,6 +14,18 @@ const kittenOne = `<li class="card">
             Porte elegante, su patrón de color tan característico y sus ojos
             de un azul intenso, pero su historia se remonta a Asía al menos
             hace 500 años, donde tuvo su origen muy posiblemente.
-   </p>
+  </p>
 </article>
-</li>;
+</li>;`
+
+/* 
+  1.Mostrar el formulario por defecto
+  2.Cuando usuario haga click en + se despliega el formulario
+*/
+
+const button = document.querySelector(".js-btn-add");
+button.removeEventListener("click",(event) => {
+  event.
+console.log("probando")
+})
+
