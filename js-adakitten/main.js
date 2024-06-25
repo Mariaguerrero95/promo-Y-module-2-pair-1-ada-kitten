@@ -29,3 +29,34 @@ button.removeEventListener("click",(event) => {
 console.log("probando")
 })
 
+/*
+1. Recoger los datos cuando la usuaria haga click en el botón  (descripción)
+2. Si la descripción coincide con la descripción del gato 1, mostrar gato 1 (igual con gato 2 y gato 3)
+
+*/
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const button1 = document.querySelector('.js-button-search');
+const kitty3 = document.querySelector('.js-description3');
+
+button1.addEventListener("click", (event) => {
+  event.preventDefault();
+  const descrSearchText = input_search_desc.value;
+  if (kitty3 === )
+    if( kittenDesc1.includes(descrSearchText) ) {
+    //Completa el código
+    }
+    
+    if( kittenDesc2.includes(descrSearchText) ) {
+    
+    }
+    
+    if( kittenDesc3.includes(descrSearchText) ) {
+    kitty3.innerHTML
+    }
+    console.log("gatito")
+})
+
+
+
+
