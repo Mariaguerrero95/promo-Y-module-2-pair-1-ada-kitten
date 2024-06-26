@@ -11,7 +11,7 @@ const description3 = `Tienen la cabeza cuadrada y los ojos simétricos, por lo q
 bella mirada se ha convertido en una de sus señas de identidad.
 Sus ojos son grandes y las orejas resultan largas y en punta.`
 
-const kittenOne = `<li class="card">
+const kittenOne = `<li class="card card1">
 <article>
   <img
     class="card_img"
@@ -26,7 +26,7 @@ const kittenOne = `<li class="card">
 </article>
 </li>;`
 
-const kittenTwo = `<li class="card">
+const kittenTwo = `<li class="card card2">
   <img
   class="card_img"
   src="https://dev.adalab.es/sphynx-gato.webp"
@@ -39,7 +39,7 @@ const kittenTwo = `<li class="card">
   </p>
   </li>`
 
-  const kittenThree = `<li class="card">
+  const kittenThree = `<li class="card card3">
   <img
     class="card_img"
     src="https://dev.adalab.es/maine-coon-cat.webp"
@@ -53,7 +53,7 @@ const kittenTwo = `<li class="card">
 </li>`
 
 const kittys = document.querySelector(".js-list");
-kittys.innerHTML = kittenOne;
+kittys.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 /* 
   1.Mostrar el formulario por defecto
@@ -80,16 +80,21 @@ button1.addEventListener("click", (event) => {
   event.preventDefault();
   const descrSearchText = input_search_desc.value;
   console.log(descrSearchText)
+  const card1 = document.querySelector('.card1');
     if( description1.includes(descrSearchText) ) {
+    card2.classList.add('collapsed')
+    card3.classList.add('collapsed')
     
     }
-    
+    const card2 = document.querySelector('.card2');
     if( description2.includes(descrSearchText) ) {
-    
+      card1.classList.add('collapsed')
+      card3.classList.add('collapsed')
     }
-    
+    const card3 = document.querySelector('.card3');
     if( description3.includes(descrSearchText) ) {
-    kitty3.innerHTML
+      card1.classList.add('collapsed')
+      card2.classList.add('collapsed')
     }
 })
 
