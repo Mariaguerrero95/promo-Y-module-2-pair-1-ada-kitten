@@ -55,17 +55,6 @@ const kittenTwo = `<li class="card card2">
 const kittys = document.querySelector(".js-list");
 kittys.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-/* 
-  1.Mostrar el formulario por defecto
-  2.Cuando usuario haga click en + se despliega el formulario
-*/
-
-const button = document.querySelector(".js-btn-add");
-button.removeEventListener("click",(event) => {
-  event.
-console.log("probando")
-})
-
 /*
 1. Recoger los datos cuando la usuaria haga click en el botón  (descripción)
 2. Si la descripción coincide con la descripción del gato 1, mostrar gato 1 (igual con gato 2 y gato 3)
@@ -103,25 +92,31 @@ button1.addEventListener("click", (event) => {
 })
 
 /*
-1. Crear el formulario,
-2. Recoger información al hacer click,
+1. Cuando la usuaria hace click en el botón de +
+2. Si el formulario está escondido, lo muestro 
+3. Si el formulario está mostrado, lo escondo.
 */
 
+const button = document.querySelector(".js-btn-add");
+const form = document.querySelector(".js-form");
+
 function showNewCatForm(){
-  newForm.classList.remove('collapsed');
+  form.classList.remove('collapsed');
 }
 function hideNewCatForm(){
-  newForm.classList.add('collapsed');
+  form.classList.add('collapsed');
 }
 
 /*Funcion manejadora*/
 
+
 function handleClickNewCatForm(event){
   event.preventDefault();
-  if (newFormElement.classList.contains('collapsed')){
-    showNewCatForm 
-    
+  if (form.classList.contains('collapsed')){
+    showNewCatForm();
+  } else {
+    hideNewCatForm();
   }
 }
 
-linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+button.addEventListener('click', handleClickNewCatForm);
