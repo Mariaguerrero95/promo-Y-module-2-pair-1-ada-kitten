@@ -74,31 +74,54 @@ console.log("probando")
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const button1 = document.querySelector('.js-button-search');
+
+const kitty1 = document.querySelector('.js-description1');
+const kitty2 = document.querySelector('.js-description2');
 const kitty3 = document.querySelector('.js-description3');
 
 button1.addEventListener("click", (event) => {
   event.preventDefault();
   const descrSearchText = input_search_desc.value;
   console.log(descrSearchText)
+
   const card1 = document.querySelector('.card1');
-    if( description1.includes(descrSearchText) ) {
-    card2.classList.add('collapsed')
-    card3.classList.add('collapsed')
-    
+  const card2 = document.querySelector('.card2');
+  const card3 = document.querySelector('.card3');
+
+    if(description1.includes(descrSearchText) ) {
+      card2.classList.add('collapsed');
+      card3.classList.add('collapsed');
     }
-    const card2 = document.querySelector('.card2');
-    if( description2.includes(descrSearchText) ) {
-      card1.classList.add('collapsed')
-      card3.classList.add('collapsed')
+    if(description2.includes(descrSearchText) ) {
+      card1.classList.add('collapsed');
+      card3.classList.add('collapsed');
     }
-    const card3 = document.querySelector('.card3');
-    if( description3.includes(descrSearchText) ) {
-      card1.classList.add('collapsed')
-      card2.classList.add('collapsed')
+    if(description3.includes(descrSearchText) ) {
+      card1.classList.add('collapsed');
+      card2.classList.add('collapsed');
     }
 })
 
+/*
+1. Crear el formulario,
+2. Recoger información al hacer click,
+*/
 
+function showNewCatForm(){
+  newForm.classList.remove('collapsed');
+}
+function hideNewCatForm(){
+  newForm.classList.add('collapsed');
+}
 
+/*Funcion manejadora*/
 
+function handleClickNewCatForm(event){
+  event.preventDefault();
+  if (newFormElement.classList.contains('collapsed')){
+    showNewCatForm 
+    
+  }
+}
 
+linkNewFormElement.addEventListener('click', handleClickNewCatForm);
