@@ -39,7 +39,7 @@ const kittenTwo = `<li class="card card2">
   </p>
   </li>`
 
-  const kittenThree = `<li class="card card3">
+const kittenThree = `<li class="card card3">
   <img
     class="card_img"
     src="https://dev.adalab.es/maine-coon-cat.webp"
@@ -58,12 +58,10 @@ kittys.innerHTML = kittenOne + kittenTwo + kittenThree;
 /*
 1. Recoger los datos cuando la usuaria haga click en el botón  (descripción)
 2. Si la descripción coincide con la descripción del gato 1, mostrar gato 1 (igual con gato 2 y gato 3)
-
 */
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const button1 = document.querySelector('.js-button-search');
-
 const kitty1 = document.querySelector('.js-description1');
 const kitty2 = document.querySelector('.js-description2');
 const kitty3 = document.querySelector('.js-description3');
@@ -120,3 +118,30 @@ function handleClickNewCatForm(event){
 }
 
 button.addEventListener('click', handleClickNewCatForm);
+
+/*
+1. Crear una nueva función 
+2. Modificar el ejercicio anterior
+3. Recoger los datos que nos da el botón buscar 
+*/
+
+const buttonSearch = document.querySelector(".js-btn-add")
+  buttonSearch.addEventListener("click", filterKitten);
+
+  /* function filterKitten(event) 
+    const descrSearchText = (event) => {
+      event.preventDefault();
+      if(description1.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenOne;
+      
+      }
+      if(description2.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenTwo;
+      
+      }
+      if(description3.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenThree;
+       
+      }
+    }
+   */
