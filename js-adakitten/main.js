@@ -1,7 +1,7 @@
 "use strict";
 /* Agregar el código del li desde HTMl 
 Repetir este proceso por cada gatito */
-const description1 = `Porte elegante, su patrón de color tan característico y sus ojos
+/*const description1 = `Porte elegante, su patrón de color tan característico y sus ojos
 de un azul intenso, pero su historia se remonta a Asía al menos
 hace 500 años, donde tuvo su origen muy posiblemente.`
 const description2 = `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
@@ -39,7 +39,7 @@ const kittenTwo = `<li class="card card2">
   </p>
   </li>`
 
-  const kittenThree = `<li class="card card3">
+const kittenThree = `<li class="card card3">
   <img
     class="card_img"
     src="https://dev.adalab.es/maine-coon-cat.webp"
@@ -51,30 +51,100 @@ const kittenTwo = `<li class="card card2">
   ${description3}
   </p>
 </li>`
-
-const kittys = document.querySelector(".js-list");
-kittys.innerHTML = kittenOne + kittenTwo + kittenThree;
-
-/* 
-  1.Mostrar el formulario por defecto
-  2.Cuando usuario haga click en + se despliega el formulario
 */
 
-const button = document.querySelector(".js-btn-add");
-button.removeEventListener("click",(event) => {
-  event.
-console.log("probando")
-})
+const kittys = document.querySelector(".js-list");
+
+const kittenData_1 = {
+  image: 'https://dev.adalab.es/gato-siames.webp',
+  name: 'Anastacio',
+  desc: 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
+  race: 'Siamés',
+ };
+
+ const kittenData_2 = {
+  image: 'https://dev.adalab.es/sphynx-gato.webp',
+  name: 'Fiona',
+  desc: 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.',
+  race: 'Sphynx',
+ };
+
+ const kittenData_3 = {
+  image: 'https://dev.adalab.es/maine-coon-cat.webp',
+  name: 'Fiona',
+  desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.',
+  race: 'Maine',
+ };
+
+
+function renderKitten1(){
+
+  return  `<li class="card card1">
+<article>
+<img
+class="card_img"
+src= ${kittenData_1.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_1.name}</h3>
+<h4 class="card_race">${kittenData_1.race}</h4>
+<p class="card_description">
+${kittenData_1.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+
+ function renderKitten2(){
+
+  return  `<li class="card card2">
+<article>
+<img
+class="card_img"
+src= ${kittenData_2.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_2.name}</h3>
+<h4 class="card_race">${kittenData_2.race}</h4>
+<p class="card_description">
+${kittenData_2.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+ function renderKitten3(){
+
+  return  `<li class="card card3">
+<article>
+<img
+class="card_img"
+src= ${kittenData_3.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_3.name}</h3>
+<h4 class="card_race">${kittenData_3.race}</h4>
+<p class="card_description">
+${kittenData_3.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+ kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3();
+ 
+
+
+
 
 /*
 1. Recoger los datos cuando la usuaria haga click en el botón  (descripción)
 2. Si la descripción coincide con la descripción del gato 1, mostrar gato 1 (igual con gato 2 y gato 3)
-
 */
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const button1 = document.querySelector('.js-button-search');
-
 const kitty1 = document.querySelector('.js-description1');
 const kitty2 = document.querySelector('.js-description2');
 const kitty3 = document.querySelector('.js-description3');
@@ -103,25 +173,68 @@ button1.addEventListener("click", (event) => {
 })
 
 /*
-1. Crear el formulario,
-2. Recoger información al hacer click,
+1. Cuando la usuaria hace click en el botón de +
+2. Si el formulario está escondido, lo muestro 
+3. Si el formulario está mostrado, lo escondo.
 */
 
+const button = document.querySelector(".js-btn-add");
+const form = document.querySelector(".js-form");
+
 function showNewCatForm(){
-  newForm.classList.remove('collapsed');
+  form.classList.remove('collapsed');
 }
 function hideNewCatForm(){
-  newForm.classList.add('collapsed');
+  form.classList.add('collapsed');
 }
 
 /*Funcion manejadora*/
 
+
 function handleClickNewCatForm(event){
   event.preventDefault();
-  if (newFormElement.classList.contains('collapsed')){
-    showNewCatForm 
-
+  if (form.classList.contains('collapsed')){
+    showNewCatForm();
+  } else {
+hideNewCatForm();
   }
 }
 
-linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+button.addEventListener('click', handleClickNewCatForm);
+
+/*
+1. Crear una nueva función 
+2. Modificar el ejercicio anterior
+3. Recoger los datos que nos da el botón buscar 
+*/
+
+/*const buttonSearch = document.querySelector(".js-btn-add")
+  buttonSearch.addEventListener("click", filterKitten);
+
+  /* function filterKitten(event) 
+    const descrSearchText = (event) => {
+      event.preventDefault();
+      if(description1.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenOne;
+      
+      }
+      if(description2.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenTwo;
+      
+      }
+      if(description3.includes(descrSearchText) ) {
+        kittys.innerHTML += kittenThree;
+       
+      }
+    }
+   */
+
+     /*Pasos en humano
+    
+     1. Cuando el usuario escriba en el buscador
+     2. Recoger la info cuando el usuario haga click
+     3. Mostras el gato que coincide con la descripción
+
+  */
+
+     
