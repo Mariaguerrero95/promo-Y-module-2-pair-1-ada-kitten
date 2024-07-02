@@ -120,7 +120,7 @@ function handleClickNewCatForm(event){
   event.preventDefault();
   if (newFormElement.classList.contains('collapsed')){
     showNewCatForm 
-    
+
   }
 }
 
