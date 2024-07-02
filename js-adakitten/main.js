@@ -74,7 +74,7 @@ const kittenData_1 = {
   name: 'Fiona',
   desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.',
   race: 'Maine',
- };
+};
 
 
 function renderKitten1(){
@@ -130,11 +130,11 @@ ${kittenData_3.desc}
 </p>
 </article>
 </li>;`
- }
+}
 
- kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3();
- 
+kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3();
 
+kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
 
 
 
