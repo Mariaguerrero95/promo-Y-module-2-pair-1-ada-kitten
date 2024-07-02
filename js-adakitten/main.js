@@ -52,71 +52,10 @@ const kittenThree = `<li class="card card3">
   </p>
 </li>`
 */
+
 const kittys = document.querySelector(".js-list");
-kittys.innerHTML = kittenData_1 + kittenData_2 + kittenData_3;
 
-
-function renderKitten(kittenData_1){
-
-  return  `<li class="card card1">
-<article>
-<img
-class="card_img"
-src= ${kittenData_1.image}
-alt="gatito"
-/>
-<h3 class=${kittenData_1.name}</h3>
-<h4 class=${kittenData_1.race}</h4>
-<p class="card_description">
-${kittenData_1.desc}         
-</p>
-</article>
-</li>;`
- }
-
-
- function renderKitten(kittenData_2){
-
-  return  `<li class="card card2">
-<article>
-<img
-class="card_img"
-src= ${kittenData_2.image}
-alt="gatito"
-/>
-<h3 class=${kittenData_2.name}</h3>
-<h4 class=${kittenData_2.race}</h4>
-<p class="card_description">
-${kittenData_2.desc}         
-</p>
-</article>
-</li>;`
- }
-
- function renderKitten(kittenData_3){
-
-  return  `<li class="card card3">
-<article>
-<img
-class="card_img"
-src= ${kittenData_3.image}
-alt="gatito"
-/>
-<h3 class=${kittenData_3.name}</h3>
-<h4 class=${kittenData_3.race}</h4>
-<p class="card_description">
-${kittenData_3.desc}         
-</p>
-</article>
-</li>;`
- }
-
-
-
-
-
-
- const kittenData_1 = {
+const kittenData_1 = {
   image: 'https://dev.adalab.es/gato-siames.webp',
   name: 'Anastacio',
   desc: 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
@@ -136,6 +75,65 @@ ${kittenData_3.desc}
   desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.',
   race: 'Maine',
  };
+
+
+function renderKitten1(){
+
+  return  `<li class="card card1">
+<article>
+<img
+class="card_img"
+src= ${kittenData_1.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_1.name}</h3>
+<h4 class="card_race">${kittenData_1.race}</h4>
+<p class="card_description">
+${kittenData_1.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+
+ function renderKitten2(){
+
+  return  `<li class="card card2">
+<article>
+<img
+class="card_img"
+src= ${kittenData_2.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_2.name}</h3>
+<h4 class="card_race">${kittenData_2.race}</h4>
+<p class="card_description">
+${kittenData_2.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+ function renderKitten3(){
+
+  return  `<li class="card card3">
+<article>
+<img
+class="card_img"
+src= ${kittenData_3.image}
+alt="gatito"
+/>
+<h3 class="card_title">${kittenData_3.name}</h3>
+<h4 class="card_race">${kittenData_3.race}</h4>
+<p class="card_description">
+${kittenData_3.desc}         
+</p>
+</article>
+</li>;`
+ }
+
+ kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3();
+ 
 
 
 
