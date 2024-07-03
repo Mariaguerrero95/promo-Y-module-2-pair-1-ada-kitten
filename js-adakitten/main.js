@@ -77,64 +77,33 @@ const kittenData_1 = {
 };
 
 
-function renderKitten1(){
+function renderKitten(data){
 
   return  `<li class="card card1">
 <article>
 <img
 class="card_img"
-src= ${kittenData_1.image}
+src= ${data.image}
 alt="gatito"
 />
-<h3 class="card_title">${kittenData_1.name}</h3>
-<h4 class="card_race">${kittenData_1.race}</h4>
+<h3 class="card_title">${data.name}</h3>
+<h4 class="card_race">${data.race}</h4>
 <p class="card_description">
-${kittenData_1.desc}         
+${data.desc}         
 </p>
 </article>
 </li>;`
  }
 
 
- function renderKitten2(){
-
-  return  `<li class="card card2">
-<article>
-<img
-class="card_img"
-src= ${kittenData_2.image}
-alt="gatito"
-/>
-<h3 class="card_title">${kittenData_2.name}</h3>
-<h4 class="card_race">${kittenData_2.race}</h4>
-<p class="card_description">
-${kittenData_2.desc}         
-</p>
-</article>
-</li>;`
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+function renderKittenList() {
+ for (const kitty of kittenDataList) {
+  kittys.innerHTML += renderKitten(kitty)
  }
-
- function renderKitten3(){
-
-  return  `<li class="card card3">
-<article>
-<img
-class="card_img"
-src= ${kittenData_3.image}
-alt="gatito"
-/>
-<h3 class="card_title">${kittenData_3.name}</h3>
-<h4 class="card_race">${kittenData_3.race}</h4>
-<p class="card_description">
-${kittenData_3.desc}         
-</p>
-</article>
-</li>;`
 }
-
-kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3();
-
-kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+renderKittenList();
+/* kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3(); */
 
 
 
