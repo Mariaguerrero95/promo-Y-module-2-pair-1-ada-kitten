@@ -98,9 +98,9 @@ ${data.desc}
 
 const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
 function renderKittenList() {
- for (const kitty of kittenDataList) {
-  kittys.innerHTML += renderKitten(kitty)
- }
+  for (const kitty of kittenDataList) {
+    kittys.innerHTML += renderKitten(kitty)
+  }
 }
 renderKittenList();
 /* kittys.innerHTML = renderKitten1() + renderKitten2() + renderKitten3(); */
